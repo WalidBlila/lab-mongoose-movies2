@@ -30,11 +30,11 @@ app.use(cookieParser());
 
 // Express View engine setup
 
-app.use(require('node-sass-middleware')({
-  src:  path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  sourceMap: true
-}));
+// app.use(require('node-sass-middleware')({
+//   src:  path.join(__dirname, 'public'),
+//   dest: path.join(__dirname, 'public'),
+//   sourceMap: true
+// }));
       
 
 app.set('views', path.join(__dirname, 'views'));
@@ -56,5 +56,8 @@ app.use('/', indexRouter);
 
 const celebritiesRouter = require('./routes/celebrities.js');
 app.use('/celebrities', celebritiesRouter);
+
+const moviesRouter = require('./routes/movies.js');
+app.use('/movies', moviesRouter);
 
 module.exports = app;

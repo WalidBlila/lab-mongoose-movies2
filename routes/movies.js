@@ -3,14 +3,14 @@ const router  = express.Router();
 
 const Movie = require("../models/movie.js");
 
-router.get("/movies", (req, res) => {
+router.get("/", (req, res) => {
     Movie.find({})
     .then((movies) => {
-        res.render("movie"/index", {movies});
+        res.render("movies/index");
     })
-    .catch((error)) => console.error(error));
+    .catch(error => console.error(error));
 });
 
-router.get("/index)
+// router.get("/index")
 
 module.exports = router;
